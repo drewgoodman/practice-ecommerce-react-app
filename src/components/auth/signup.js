@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
+import SignUpForm from './signupForm';
+import PageTitle from '../pageTitle';
 
 export default class SignUp extends Component {
-  constructor(props) {
-      super(props)
 
-      this.state = {
-          
-      }
-  }
 
-  render() {
-      return (
-          <div className="sign-up">
-              Sign up
-          </div>
-      )
-  }
+    onSubmit = (fields) => {
+        console.log(fields);
+    }
+
+    render() {
+        return (
+            <div className="sign-up">
+                <PageTitle className='sign-up__page-title' title='Register' />
+                <SignUpForm className='sign-up__form' onSubmit={this.onSubmit} />
+            </div>
+        )
+    }
+
 }
