@@ -27,6 +27,9 @@ body {
 @import './form-fields.scss';
 @import './details.scss';
 
+@import './quantity.scss';
+@import './green-price-tag.scss';
+
 // AUTH
 @import 'auth/signin.scss';
 @import 'auth/signup.scss';
@@ -38,3 +41,4 @@ body {
 
 //SHOP
 @import 'shop/shop.scss';
+@import 'shop/shop-searchbar.scss';
