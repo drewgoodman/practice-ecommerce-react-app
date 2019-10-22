@@ -4,11 +4,20 @@ import * as actions from '../../actions';
 
 import ShopSearchBar from './shopSearchBar';
 import ShopProduct from './shopProduct';
+import ShopCart from './shopCart';
 
 class Shop extends Component {
 
-    componentDidMount() {
 
+    constructor() {
+        super()
+
+        this.state = {
+            showCart: true
+        }
+    }
+
+    componentDidMount() {
         const headerLinks = [
             {
                 _id: 0,
@@ -18,8 +27,8 @@ class Shop extends Component {
         ]
         this.props.setHeaderLinks(headerLinks);
         this.props.fetchShopCategories();
+
         this.props.fetchShopProducts();
-        // set the header links
     }
 
     shouldComponentUpdate(nextProps) {
@@ -34,6 +43,8 @@ class Shop extends Component {
     }
 
     render() {
+
+        return <ShopCart className='shop__cart'/>
         return (
             <div className="shop">
                 <ShopSearchBar onSubmit={this.onSubmit} className="shop__search-bar"/>
