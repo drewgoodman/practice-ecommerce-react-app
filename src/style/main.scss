@@ -18,6 +18,11 @@ h1 {
 body {
     font-family: "Open Sans";
     color: #808080;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
 }
 
 @import './layout.scss';
@@ -45,3 +50,8 @@ body {
 @import 'shop/shop-product.scss';
 @import 'shop/shop-cart.scss';
 @import 'shop/cart-product.scss';
+
+// ORDER REVIEW
+@import 'order/review.scss';
+@import 'order/review-form.scss';
+@import 'order/review-product.scss';
