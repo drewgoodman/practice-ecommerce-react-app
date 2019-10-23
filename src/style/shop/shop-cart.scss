@@ -1,4 +1,7 @@
+
 .shop-cart {
+    transition: all .3s ease;
+
     display: grid;
     grid-template-rows: [tog-s] 40px [tog-e con-s] 1fr [con-e];
     grid-template-columns: [s] 1fr [e];
@@ -9,9 +12,6 @@
         grid-column: s/e;
         justify-self: end;
 
-        display: grid;
-        justify-items: center;
-        align-items: center;
     }
 
     &__content {
@@ -23,7 +23,7 @@
 
 .shop-cart {
     &__toggle {
-
+        z-index: 6;
     }
     &__content {
         height: 675px;
@@ -34,18 +34,24 @@
 }
 
 .cart-button {
+    
+    transition: all .3s ease;
     background-color: #333;
     font-size: 28px;
     color: white;
     border-radius: 25px 0 0 25px;
     height: 40px;
     width: 76px;
+    
+    display: grid;
+    justify-items: center;
+    align-items: center;
 }
 
 .cart-content {
 
     display: grid;
-    grid-template-rows: 25px [title-s] 80px [title-e products-s] 1fr [products-e footer-s] 113px [footer-e];
+    grid-template-rows: 25px [title-s] 40px [title-e products-s] 1fr [products-e footer-s] 113px [footer-e];
     grid-template-columns: [footer-s] 30px [s] 1fr [e] 30px [footer-e];
 
     &__title {
@@ -55,13 +61,15 @@
         font-size: 30px;
         font-family: "Titillium Web";
         color: #e6e6e6;
-        margin-bottom: 50px;
     }
 
     &__products {
+        padding-top: 50px;
         grid-row: products-s/products-e;
         grid-column: s/e;
         display: grid;
+        overflow-y: scroll;
+        grid-row-gap: 45px;
     }
 
     &__footer {
@@ -127,4 +135,8 @@
         font-weight: 600;
         justify-self: start;
     }
+}
+
+.cart-hidden {
+    transform: translateX(520px);
 }
