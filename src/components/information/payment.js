@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-// import SignInForm from './signinForm';
 import PageTitle from '../pageTitle';
 
 
@@ -23,14 +21,20 @@ class Payment extends Component {
 
     render() {
         return (
-            <div className="sign-in">
-                <PageTitle className='sign-in__page-title' title='Payment Information' />
-                <PaymentForm className='sign-in__form' onSubmit={this.onSubmit} />
+            <div className="payment">
+                <PageTitle className='payment__page-title' title='Payment Information' />
+                <PaymentForm className='payment__form' onSubmit={this.onSubmit} name={this.props.name} address={this.props.address} />
             </div>
         )
     }
 
 }
 
-Payment = connect(null, actions)(Payment);
+
+function mapStateToProps(state) {
+    const { name, address } = state.user.user;
+    return { name, address }
+}
+
+Payment = connect(mapStateToProps, actions)(Payment);
 export default Payment;
