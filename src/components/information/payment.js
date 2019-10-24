@@ -7,6 +7,8 @@ import PageTitle from '../pageTitle';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
+import PaymentForm from './paymentForm';
+
 class Payment extends Component {
 
     componentDidMount() {
@@ -23,7 +25,7 @@ class Payment extends Component {
         return (
             <div className="sign-in">
                 <PageTitle className='sign-in__page-title' title='Payment Information' />
-                {/* <PaymentForm className='sign-in__form' onSubmit={this.onSubmit} /> */}
+                <PaymentForm className='sign-in__form' onSubmit={this.onSubmit} />
             </div>
         )
     }
